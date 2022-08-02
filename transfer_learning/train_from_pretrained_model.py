@@ -24,7 +24,7 @@ dataloader = DataLoader(dataset, shuffle=True, batch_size=2)
 epochs = 5
 batch = next(iter(dataloader))
 
-if os.path.exists("saved_model/flowers.pth"):
+if os.path.exists("../saved_model/flowers.pth"):
     # model = torch.load('saved_model/flowers.pth')
     model.load_state_dict(torch.load('saved_model/flowers.pth'))
     model.to(device)
@@ -49,4 +49,4 @@ for epoch in range(epochs):
         epoch_loss += loss.item()
     print(epoch_loss)
 
-torch.save(model.state_dict(), "saved_model/flowers.pth")
+torch.save(model.state_dict(), "../saved_model/flowers.pth")
